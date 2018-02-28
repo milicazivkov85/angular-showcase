@@ -9,10 +9,10 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#" routerLink="/welcome">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#" routerLink="/crud">Link</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
@@ -20,9 +20,9 @@
       <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#" routerLink="/welcome">Action</a>
+          <a class="dropdown-item" href="#" routerLink="/crud">Another action</a>
+          <a class="dropdown-item" href="#" routerLink="/crud">Something else here</a>
         </div>
       </li>
     </ul>
@@ -46,9 +46,6 @@
 
 <main role="main" class="container">
 
-  <div class="starter-template">
-    <h1>{{'main.title' | translate}}</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-  </div>
+  <router-outlet></router-outlet>
 
 </main>

@@ -7,11 +7,16 @@ import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { AppRoutingModule } from './app-routing.module';
+import { CrudFormComponent } from './crud-form/crud-form.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CrudFormComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,8 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
