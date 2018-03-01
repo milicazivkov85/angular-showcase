@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrudEntity } from './crud-entity';
 import { CrudService } from './crud.service';
 import 'rxjs/add/operator/catch';
-import { HttpErrorResponse } from "@angular/common/http";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-crud-form',
@@ -16,10 +16,11 @@ export class CrudFormComponent implements OnInit {
   successMessage: string;
 
   constructor(
-    private crudService: CrudService) {}
+    private crudService: CrudService,
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.crud = new CrudEntity();
+    this.getCrud();
   }
 
   save(): void {
@@ -30,5 +31,18 @@ export class CrudFormComponent implements OnInit {
       () => this.successMessage = 'CRUD Save Success'
     );
   }
+
+
+  getCrud(): void {
+    const email = this.route.snapshot.paramMap.get('email');
+    if (email) {
+      this.crudService.get().subscribe(
+        items => this.crud = items[0]
+      );
+    } else {
+      this.crud = new CrudEntity();
+    }
+  }
+
 
 }

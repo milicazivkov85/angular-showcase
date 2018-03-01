@@ -14,13 +14,15 @@ import { FormsModule } from "@angular/forms";
 import { CrudService } from "./crud-form/crud.service";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./in-memory-data.service";
+import { CrudListComponent } from './crud-list/crud-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CrudFormComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CrudListComponent
   ],
   imports: [
     BrowserModule,
