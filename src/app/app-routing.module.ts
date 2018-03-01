@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { CrudFormComponent } from "./crud-form/crud-form.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 

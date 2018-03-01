@@ -10,6 +10,10 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { AppRoutingModule } from './app-routing.module';
 import { CrudFormComponent } from './crud-form/crud-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { FormsModule } from "@angular/forms";
+import { CrudService } from "./crud-form/crud.service";
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import { InMemoryDataService } from "./in-memory-data.service";
 
 
 @NgModule({
@@ -20,8 +24,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     NgbModule.forRoot(),
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
+    ),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -31,7 +39,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     }),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
