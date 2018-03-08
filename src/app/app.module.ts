@@ -12,8 +12,6 @@ import { CrudFormComponent } from './crud-form/crud-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule } from "@angular/forms";
 import { CrudService } from "./crud-form/crud.service";
-import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
-import { InMemoryDataService } from "./in-memory-data.service";
 import { CrudListComponent } from './crud-list/crud-list.component';
 
 
@@ -29,9 +27,6 @@ import { CrudListComponent } from './crud-list/crud-list.component';
     FormsModule,
     NgbModule.forRoot(),
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
-    ),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

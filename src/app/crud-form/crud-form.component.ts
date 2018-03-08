@@ -24,11 +24,10 @@ export class CrudFormComponent implements OnInit {
   }
 
   save(): void {
-    this.crudService.addEntity(this.crud).catch(err => {
-         this.errorMessage = err.message;
-         throw err;
-    }).subscribe(
-      () => this.successMessage = 'CRUD Save Success'
+    this.crudService.addEntity(this.crud).subscribe(
+      next => {},
+      error => {console.log('onError: %s', error);},
+      () => {this.successMessage = 'CRUD Save Success';}
     );
   }
 

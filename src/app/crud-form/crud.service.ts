@@ -8,6 +8,8 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+const restApiUrl = 'https://5qfnab4eob.execute-api.eu-central-1.amazonaws.com/dev/crud';
+
 @Injectable()
 export class CrudService {
 
@@ -16,11 +18,11 @@ export class CrudService {
   ) {}
 
   addEntity (entity: CrudEntity): Observable<CrudEntity> {
-    return this.http.post<CrudEntity>('api/cruders', entity, httpOptions);
+    return this.http.post<CrudEntity>(restApiUrl, entity, httpOptions);
   }
 
   get() {
-    return this.http.get<CrudEntity[]>("api/cruders");
+    return this.http.get<CrudEntity[]>(restApiUrl);
   }
 
 }
