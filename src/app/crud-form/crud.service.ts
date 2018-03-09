@@ -8,7 +8,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const restApiUrl = 'https://5qfnab4eob.execute-api.eu-central-1.amazonaws.com/dev/crud';
+const restApiUrl = 'https://vrise4bmgk.execute-api.eu-central-1.amazonaws.com/dev/crud';
 
 @Injectable()
 export class CrudService {

@@ -1,7 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import "../node_modules/flag-icon-css/css/flag-icon.min.css";
 @import "assets/forms.css";
 body {
   padding-top: 5rem;
+}
+
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  line-height: 1em;
+}
+
+.flag-icon-de {
+  background-image: url(assets/flags/de.svg);
+}
+
+.flag-icon-gb {
+  background-image: url(assets/flags/gb.svg);
 }
